@@ -36,9 +36,5 @@ public class enemy_followPlayer : MonoBehaviour
             Debug.Log("player hp: " + playerStat.hp);
             Destroy(gameObject);
         }
-
-        if (collision.CompareTag("player_bullet")){
-            Destroy(gameObject);
-        }
     }
 }
