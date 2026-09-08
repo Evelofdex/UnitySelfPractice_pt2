@@ -24,7 +24,7 @@ public class shooting : MonoBehaviour
         offset = -90f;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         MouseScreenPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

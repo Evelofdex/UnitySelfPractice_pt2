@@ -5,13 +5,9 @@ using UnityEngine;
 public class spawnManager : MonoBehaviour
 {
 
-    [SerializeField]
-    private GameObject enemyObj;
+    [SerializeField] private GameObject enemyObj;
 
-    [SerializeField]
-    private GameObject spawnPoint1;
-    [SerializeField]
-    private GameObject spawnPoint2;
+    [SerializeField] private GameObject[] spawnPoints;
 
 
     // Start is called before the first frame update
@@ -24,10 +20,9 @@ public class spawnManager : MonoBehaviour
     {
         while (true)
         {    
-            Instantiate(enemyObj, spawnPoint1.transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(1f);
-            Instantiate(enemyObj, spawnPoint2.transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(3f);
+            int randomIndex = Random.Range(0, spawnPoints.Length);
+            Instantiate(enemyObj, spawnPoints[randomIndex].transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(Random.Range(0.5f, 3f)); 
         }
     }
 

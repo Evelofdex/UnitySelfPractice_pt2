@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class playerStats : MonoBehaviour
 {
@@ -17,5 +19,9 @@ public class playerStats : MonoBehaviour
     void Update()
     {
         hpCounter.text = "HP: " + hp;
+        if (hp <= 0)
+        {
+            SceneManager.LoadScene("gameOver");
+        }
     }
 }

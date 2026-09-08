@@ -15,7 +15,7 @@ public class bulletBehavior : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.mass = 0f;
         spd = 0.5f;
-        rb.AddForce(transform.up * spd * Time.deltaTime, ForceMode2D.Impulse);
+        rb.AddForce(transform.up * spd, ForceMode2D.Impulse);
         StartCoroutine(deleteBullet());
     }
 
